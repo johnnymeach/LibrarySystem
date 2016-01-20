@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="927.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="927.0" styleClass="containerBackground" stylesheets="@../views/css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="46.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleLabel" text="Library System" />
       <ImageView fitHeight="461.0" fitWidth="847.0" layoutX="9.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/bookss.jpg" />
+            <Image url="@../views/img/bookss.jpg" />
          </image>
          <effect>
             <BoxBlur />
@@ -40,7 +40,7 @@
          <children>
             <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
             <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
-            <Button layoutX="16.0" layoutY="139.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
+            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
