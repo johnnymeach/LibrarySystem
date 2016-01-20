@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="927.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="46.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleLabel" text="Library System" />
+      <ImageView fitHeight="461.0" fitWidth="847.0" layoutX="9.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/bookss.jpg" />
+         </image>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </ImageView>
+      <Group layoutX="351.0" layoutY="66.0" />
+      <Group layoutX="319.0" layoutY="225.0" />
+      <HBox layoutX="293.0" layoutY="91.0" prefHeight="38.0" prefWidth="225.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Book" />
+            <TextField />
+         </children>
+      </HBox>
+      <HBox layoutX="539.0" layoutY="91.0" prefHeight="30.0" prefWidth="240.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Member" />
+            <TextField />
+         </children>
+      </HBox>
+      <Separator layoutY="66.0" prefHeight="16.0" prefWidth="701.0" />
+      <AnchorPane layoutX="31.0" layoutY="98.0" prefHeight="438.0" prefWidth="225.0">
+         <children>
+            <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
+            <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
+            <Button layoutX="16.0" layoutY="139.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Separator layoutX="3.0" layoutY="50.0" prefWidth="200.0" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" styleClass="btn" text="Change Password" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="555.0" layoutY="41.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" styleClass="btnSignOut" text="Sign Out" />
+   </children>
+</AnchorPane>
