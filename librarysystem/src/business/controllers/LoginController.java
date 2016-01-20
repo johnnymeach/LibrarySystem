@@ -28,8 +28,8 @@ public class LoginController implements Initializable {
 	public void loginAction(ActionEvent event) {
 		String memberView = "../views/librarian/AddNewMember.fxml";
 		String viewTitle = "Library Member";
-//		System.out.println(usernameField.getText());
-//		System.out.println(passwordField.getText());
+		System.out.println(usernameField.getText());
+		System.out.println(passwordField.getText());
 		helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
 
