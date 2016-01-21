@@ -31,10 +31,8 @@ public class LoginController implements Initializable {
 	Stage stage;
 
 	public void loginAction(ActionEvent event) {
-		// System.out.println(usernameField.getText());
-		// System.out.println(passwordField.getText());
 		UserImpl userImpl = new UserImpl();
-		User user = userImpl.getUser(usernameField.getText());
+		user = userImpl.getUser(usernameField.getText());
 		System.out.println(user);
 		if (user != null) {
 			if (user.getUserPassword().toString().equals(passwordField.getText())) {
