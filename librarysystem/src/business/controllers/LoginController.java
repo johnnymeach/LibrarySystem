@@ -3,6 +3,8 @@ package business.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import business.models.PersonRole;
+import business.models.User;
 import business.util.Helper;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -16,6 +18,8 @@ import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
+	static User user;
+	PersonRole role;
 	@FXML
 	private Label lblClose;
 	@FXML
@@ -28,6 +32,7 @@ public class LoginController implements Initializable {
 	public void loginAction(ActionEvent event) {
 //		System.out.println(usernameField.getText());
 //		System.out.println(passwordField.getText());
+		
 		String memberView = "../views/home/Dashboard.fxml";
 		String viewTitle = "Library System";
 		helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
