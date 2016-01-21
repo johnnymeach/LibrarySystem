@@ -3,17 +3,8 @@ package dataaccess;
 import java.util.List;
 import business.models.User;
 
-
 public class UserImpl extends DataAccess implements UserIn {
 
-	@Override
-	public void deleteUser(int index)
-	{
-		List<User> allUser = getAllItems();
-		allUser.remove(index);
-		save(allUser);
-        	}
-	
 	@Override
 	public void editUser(User currentUser) {
 		List<User> allUser = getAllItems();
@@ -27,22 +18,20 @@ public class UserImpl extends DataAccess implements UserIn {
 
 		save(allUser);
 	}
-	// get user by ID 
-
+	
+	//Search user by ID
 	@Override
 	public User getUser(String requestId) {
 		User returnResult = null;
 		List<User> allUser = getAllItems();
-		for(User user:allUser){
-			if(user.getUserID().toString().equals(requestId)){
-				returnResult = user;
-			}else{
-				returnResult = null;
+		for (User user : allUser) {
+			if (user.getUserID().toString().equals(requestId)) {
+				return user;
 			}
 		}
-		
-		return returnResult;
-		
+
+		return null;
+
 	}
 
 	public void addUser(User user) {
@@ -51,5 +40,11 @@ public class UserImpl extends DataAccess implements UserIn {
 		save(allUser);
 	}
 	
-	
+	@Override
+	public void deleteUser(int index) {
+		List<User> allUser = getAllItems();
+		allUser.remove(index);
+		save(allUser);
+	}
+
 }

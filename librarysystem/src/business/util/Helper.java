@@ -3,6 +3,8 @@ package business.util;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -37,5 +39,12 @@ public class Helper {
 		String memberView = "../views/librarian/ViewMember.fxml";
 		String viewTitle = "Library Member";
 		loadNewStage(stage, lblClose, memberView, viewTitle, false);
+	}
+	
+	public void showErroDialog(String msg, String title){
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle(title);
+		alert.setContentText(msg);
+		alert.showAndWait();
 	}
 }

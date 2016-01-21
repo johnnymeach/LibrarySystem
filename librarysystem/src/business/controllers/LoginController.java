@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import business.models.PersonRole;
 import business.models.User;
 import business.util.Helper;
+import dataaccess.UserImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,12 +31,23 @@ public class LoginController implements Initializable {
 	Stage stage;
 
 	public void loginAction(ActionEvent event) {
-//		System.out.println(usernameField.getText());
-//		System.out.println(passwordField.getText());
-		
-		String memberView = "../views/home/Dashboard.fxml";
-		String viewTitle = "Library System";
-		helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+		// System.out.println(usernameField.getText());
+		// System.out.println(passwordField.getText());
+		UserImpl userImpl = new UserImpl();
+		User user = userImpl.getUser(usernameField.getText());
+		System.out.println(user);
+		if (user != null) {
+			if (user.getUserPassword().toString().equals(passwordField.getText())) {
+				String memberView = "../views/home/Dashboard.fxml";
+				String viewTitle = "Library System";
+				helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+			} else {
+				helper.showErroDialog("Invalid userID or password", "Login Error");
+			}
+		} else {
+			helper.showErroDialog("Invalid userID or password", "Login Error");
+		}
+
 	}
 
 	@Override
