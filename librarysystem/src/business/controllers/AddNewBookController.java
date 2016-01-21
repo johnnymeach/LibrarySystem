@@ -41,8 +41,8 @@ public class AddNewBookController implements Initializable{
 
 	}
 	
-	public void test(){
-		System.out.println("hello");
+	public void backToDashboard() {
+		LoginController.helper.backToHome(stage, lblClose, "../views/home/Dashboard.fxml");
 	}
 
 	
