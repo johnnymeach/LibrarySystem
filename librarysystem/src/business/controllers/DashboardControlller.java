@@ -11,7 +11,7 @@ public class DashboardControlller {
 	Stage stage;
 
 	public void openMemberInfo() {
-		
+
 		String memberView = "../views/librarian/ViewMember.fxml";
 		String viewTitle = "Library System";
 		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
@@ -36,15 +36,15 @@ public class DashboardControlller {
 	public void changePassword() {
 
 	}
-	
-	public void signOut(){
+
+	public void signOut() {
 		String memberView = "../views/login/Login.fxml";
 		String viewTitle = "Library System";
 		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
-	
-	public void openAdminInfo(){
-		
+
+	public void openAdminInfo() {
+
 	}
 
 }
