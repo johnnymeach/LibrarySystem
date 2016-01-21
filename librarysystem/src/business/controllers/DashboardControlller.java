@@ -18,15 +18,19 @@ public class DashboardControlller {
 	}
 
 	public void openBookInfo() {
-
+		String memberView = "../views/book/AddNewBook.fxml";
+		String viewTitle = "Library System";
+		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
 
-	public void openLibraryInfo() {
+	public void openLibrarianInfo() {
 
 	}
 
 	public void openAuthorInfo() {
-
+		String memberView = "../views/author/AddNewAuthor.fxml";
+		String viewTitle = "Library System";
+		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
 
 	public void changePassword() {

@@ -13,22 +13,13 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AddNewBookController implements Initializable{
+public class AddNewAuthorController implements Initializable{
 	
 	Stage stage;
 	Helper helper = new Helper();
 	@FXML
 	private Label lblClose;
-	@FXML
-	private Button btnNewAuthor;
 	
-	public void addAuthor(ActionEvent event) throws Exception{
-		String AuthorView = "../views/author/addAuthor.fxml";
-		String viewTitle = "Add New Author";
-		helper.loadNewStage(stage,lblClose, AuthorView, viewTitle, false);
-		System.out.println("xyz");
-		
-	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 

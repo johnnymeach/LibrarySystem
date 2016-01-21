@@ -40,7 +40,7 @@
          <children>
             <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
             <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
-            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#openLibraryInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
+            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#openLibrarianInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
