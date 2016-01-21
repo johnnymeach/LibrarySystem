@@ -16,11 +16,11 @@
      
      <Label styleClass="loginText" text="UserID:" textFill="#171d46" GridPane.columnIndex="0" GridPane.rowIndex="1" />
      
-     <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+     <TextField fx:id="usernameField" promptText="984909" text="984909" GridPane.columnIndex="1" GridPane.rowIndex="1" />
      
      <Label styleClass="loginText" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
      
-     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+     <PasswordField fx:id="passwordField" promptText="321" text="321" GridPane.columnIndex="1" GridPane.rowIndex="2" />
      
      <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
         <children>

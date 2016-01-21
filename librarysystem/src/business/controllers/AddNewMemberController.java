@@ -50,5 +50,9 @@ public class AddNewMemberController {
 	public void backToHome() {
 		helper.backToHome(stage, lblClose);
 	}
+	
+	public void test(){
+		System.out.println("Test from other controller");
+	}
 
 }

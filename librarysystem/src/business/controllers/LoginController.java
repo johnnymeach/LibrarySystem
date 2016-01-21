@@ -30,10 +30,12 @@ public class LoginController implements Initializable {
 	private Helper helper = new Helper();
 	Stage stage;
 
+	
 	public void loginAction(ActionEvent event) {
+		usernameField.setText("984909");
+		passwordField.setText("321");
 		UserImpl userImpl = new UserImpl();
-		user = userImpl.getUser(usernameField.getText());
-		System.out.println(user);
+		user = userImpl.searchtUser(usernameField.getText());
 		if (user != null) {
 			if (user.getUserPassword().toString().equals(passwordField.getText())) {
 				String memberView = "../views/home/Dashboard.fxml";

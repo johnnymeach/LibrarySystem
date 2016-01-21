@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="927.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="927.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.controllers.DashboardControlller">
    <children>
       <Text layoutX="295.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleLabel" text="Library System" />
       <ImageView fitHeight="454.0" fitWidth="840.0" layoutX="9.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
@@ -38,15 +38,20 @@
       <Separator layoutX="7.0" layoutY="66.0" prefHeight="16.0" prefWidth="840.0" />
       <AnchorPane layoutX="31.0" layoutY="98.0" prefHeight="438.0" prefWidth="173.0">
          <children>
-            <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
-            <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
-            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
+            <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
+            <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
+            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#openLibraryInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
             <Separator layoutX="3.0" layoutY="50.0" prefHeight="1.0" prefWidth="165.0" />
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" styleClass="btn" text="Change Password" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#test" styleClass="btn" text="Change Password" />
+            <Button layoutX="16.0" layoutY="184.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Author">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
          </children>
       </AnchorPane>
       <Button layoutX="724.0" layoutY="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" styleClass="btn" text="Sign Out" />
