@@ -21,8 +21,7 @@ public class UserImpl extends DataAccess implements UserIn {
 	
 	//Search user by ID
 	@Override
-	public User searchtUser(String requestId) {
-		User returnResult = null;
+	public User searchUser(String requestId) {
 		List<User> allUser = getAllItems();
 		for (User user : allUser) {
 			if (user.getUserID().toString().equals(requestId)) {

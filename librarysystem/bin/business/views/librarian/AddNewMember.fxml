@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="703.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.controllers.AddNewMemberController">
    <children>
-      <Button fx:id="btnBack" layoutX="461.0" layoutY="494.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="27.0" prefWidth="103.0" styleClass="btn" text="Back" />
+      <Button fx:id="btnBack" layoutX="461.0" layoutY="494.0" mnemonicParsing="false" onAction="#backToMemberView" prefHeight="27.0" prefWidth="103.0" styleClass="btn" text="Back" />
       <Button fx:id="btnMemberInfoClear" layoutX="335.0" layoutY="494.0" mnemonicParsing="false" onAction="#clearAllInput" prefHeight="27.0" prefWidth="103.0" styleClass="btn" text="Clear" />
       <Button fx:id="btnMemberInfoSave" layoutX="210.0" layoutY="494.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" styleClass="btn" text="Save" />
       <Label layoutX="84.0" layoutY="441.0" styleClass="titleText" stylesheets="@../css/Main.css" text="Zip">

@@ -47,8 +47,8 @@ public class AddNewMemberController {
 		txtMemberZip.setText("");
 	}
 
-	public void backToHome() {
-		helper.backToHome(stage, lblClose);
+	public void backToMemberView() {
+		helper.backToHome(stage, lblClose,"../views/librarian/ViewMember.fxml");
 	}
 	
 	public void test(){

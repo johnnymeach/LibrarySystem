@@ -37,8 +37,7 @@ public class Helper {
 
 	}
 
-	public void backToHome(Stage stage, Label lblClose) {
-		String memberView = "../views/librarian/ViewMember.fxml";
+	public void backToHome(Stage stage, Label lblClose, String memberView) {
 		String viewTitle = "Library Member";
 		loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}

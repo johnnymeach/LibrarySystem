@@ -27,15 +27,16 @@ public class LoginController implements Initializable {
 	private TextField usernameField;
 	@FXML
 	private PasswordField passwordField;
-	private Helper helper = new Helper();
+	static Helper helper = new Helper();
 	Stage stage;
 
 	
 	public void loginAction(ActionEvent event) {
 		usernameField.setText("984909");
 		passwordField.setText("321");
+		
 		UserImpl userImpl = new UserImpl();
-		user = userImpl.searchtUser(usernameField.getText());
+		user = userImpl.searchUser(usernameField.getText());
 		if (user != null) {
 			if (user.getUserPassword().toString().equals(passwordField.getText())) {
 				String memberView = "../views/home/Dashboard.fxml";

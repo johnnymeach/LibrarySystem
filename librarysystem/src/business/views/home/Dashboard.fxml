@@ -46,15 +46,20 @@
                </opaqueInsets>
             </Button>
             <Separator layoutX="3.0" layoutY="50.0" prefHeight="1.0" prefWidth="165.0" />
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#test" styleClass="btn" text="Change Password" />
-            <Button layoutX="16.0" layoutY="184.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Author">
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#changePassword" styleClass="btn" text="Change Password" />
+            <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Author">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#openAdminInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Admintrator">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
          </children>
       </AnchorPane>
-      <Button layoutX="724.0" layoutY="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" styleClass="btn" text="Sign Out" />
+      <Button layoutX="724.0" layoutY="40.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="125.0" styleClass="btn" text="Sign Out" />
       <Label fx:id="lblClose" layoutX="10.0" layoutY="7.0" text="X" textFill="#f20303">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />

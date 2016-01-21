@@ -9,17 +9,15 @@ public class ViewMemberController {
 
 	@FXML
 	private Label lblClose;
-	
-	private Helper helper = new Helper();
 	Stage stage;
 
-	public void backToHome() {
-		helper.backToHome(stage, lblClose);
+	public void backToDashboard() {
+		LoginController.helper.backToHome(stage, lblClose, "../views/home/Dashboard.fxml");
 	}
 
 	public void loadAddNewMemberView() {
 		String memberView = "../views/librarian/AddNewMember.fxml";
 		String viewTitle = "Add New Member";
-		helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
 }
