@@ -33,7 +33,7 @@
                </cursor></Button>
         </children>
      </HBox>
-      <Label fx:id="lblClose" alignment="TOP_LEFT" text="X" textFill="#803044" GridPane.rowIndex="7">
+      <Label fx:id="lblClose" alignment="TOP_LEFT" text="X" textFill="#75283c" GridPane.rowIndex="7">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>

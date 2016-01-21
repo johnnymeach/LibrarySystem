@@ -34,7 +34,9 @@ public class DashboardControlller {
 	}
 	
 	public void signOut(){
-		
+		String memberView = "../views/login/Login.fxml";
+		String viewTitle = "Library System";
+		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
 	}
 	
 	public void openAdminInfo(){
