@@ -14,7 +14,7 @@
      
      <Text id="login-title" fill="#3e3ab2" styleClass="loginTitle" text="User Authentication" GridPane.columnSpan="2" />
      
-     <Label styleClass="loginText" text="Username:" textFill="#171d46" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+     <Label styleClass="loginText" text="UserID:" textFill="#171d46" GridPane.columnIndex="0" GridPane.rowIndex="1" />
      
      <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
      

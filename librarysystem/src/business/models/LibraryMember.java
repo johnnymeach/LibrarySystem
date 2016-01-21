@@ -1,24 +1,25 @@
 package business.models;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.UUID;
 
-public class LibraryMember implements Serializable {
-	private CheckoutRecord record = new CheckoutRecord();
-	public LibraryMember(String name) {
-		this.name = name;
-	}
-	private String name;
-	
-	public void checkout(LendableCopy copy, LocalDate checkoutDate, LocalDate dueDate) {
-		CheckoutRecordEntry entry = new CheckoutRecordEntry(copy, checkoutDate, dueDate);
-		record.addEntry(entry);
+public class LibraryMember extends Person implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String memberId;
+	private CheckoutRecord checkoutRecord;
+
+	public LibraryMember(){
 		
 	}
-	
-	public String toString() {
-		return "Checkout record for library member " + name + ": " + record;
+	public LibraryMember(String firstName, String lastName, String phone, Address address, String memberId,
+			CheckoutRecord checkoutRecord) {
+		super(firstName, lastName, phone, address);
+		this.memberId = memberId;
+		this.checkoutRecord = checkoutRecord;
 	}
-	
-	private static final long serialVersionUID = -2226197306790714013L;
+
 }

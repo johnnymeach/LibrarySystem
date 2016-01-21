@@ -1,21 +1,55 @@
 package business.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Book extends Publication implements Serializable {
-	private int id;
-	private String isbn;
-	private boolean available;
-	public Book(int id, String isbn, String title) {
-		super(title);
-		this.id = id;
-		this.isbn = isbn;
+public class Book implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private String ISBN;
+	private String title;
+	private int maxCheckoutLength;
+	private List<Author> author = new ArrayList<Author>();
+
+	public Book(String iSBN, String title, int maxCheckoutLength, List<Author> author) {
+		super();
+		ISBN = iSBN;
+		this.title = title;
+		this.maxCheckoutLength = maxCheckoutLength;
+		this.author = author;
 	}
-	public void isAvailable(boolean b) {
-		available = b;
+
+	public String getISBN() {
+		return ISBN;
 	}
-	@Override
-	public String toString() {
-		return "id: " + id + ", isbn: " + isbn + ", available: " + available;
+
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getMaxCheckoutLength() {
+		return maxCheckoutLength;
+	}
+
+	public void setMaxCheckoutLength(int maxCheckoutLength) {
+		this.maxCheckoutLength = maxCheckoutLength;
+	}
+
+	public List<Author> getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(List<Author> author) {
+		this.author = author;
+	}
+
 }
