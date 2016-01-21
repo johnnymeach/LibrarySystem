@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="729.0" styleClass="containerBackground" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.controllers.AddNewBookController">
+   <children>
+      <Text layoutX="213.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleLabel" text="Book Information" />
+      <Separator layoutX="45.0" layoutY="91.0" prefHeight="5.0" prefWidth="635.0" />
+      <Label layoutX="133.0" layoutY="117.0" styleClass="labelForInput" text="ISBN" />
+      <Label layoutX="113.0" layoutY="164.0" styleClass="labelForInput" text="Book Title" />
+      <Label layoutX="127.0" layoutY="208.0" styleClass="labelForInput" text="Author" />
+      <Label layoutX="79.0" layoutY="250.0" styleClass="labelForInput" text="Books Available " />
+      <TextField fx:id="txt_ISBN" layoutX="343.0" layoutY="115.0" prefHeight="25.0" prefWidth="302.0" />
+      <TextField fx:id="txtBookTitle" layoutX="344.0" layoutY="162.0" prefHeight="25.0" prefWidth="302.0" />
+      <TextField fx:id="txtBookAvailable" layoutX="343.0" layoutY="249.0" prefHeight="25.0" prefWidth="302.0" />
+      <ComboBox layoutX="343.0" layoutY="207.0" prefHeight="25.0" prefWidth="173.0" />
+      <Button fx:id="btn_NewAuthor" layoutX="535.0" layoutY="205.0" mnemonicParsing="false" onAction="#addAuthor" styleClass="btn" text="New Author" />
+      <Button fx:id="btn_Save" layoutX="344.0" layoutY="299.0" mnemonicParsing="false" styleClass="btn" text="Save" />
+      <Label fx:id="lblClose" layoutX="65.0" layoutY="23.0" text="Close WIndow" />
+   </children>
+</AnchorPane>
