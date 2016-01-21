@@ -48,4 +48,11 @@ public class Helper {
 		alert.setContentText(msg);
 		alert.showAndWait();
 	}
+	
+	public void showSuccessDialog(String msg, String title) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(title);
+		alert.setContentText(msg);
+		alert.showAndWait();
+	}
 }

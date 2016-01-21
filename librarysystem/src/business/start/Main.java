@@ -1,10 +1,6 @@
 package business.start;
 
-import business.models.Address;
-import business.models.PersonRole;
-import business.models.User;
 import business.util.Helper;
-import dataaccess.UserImpl;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
