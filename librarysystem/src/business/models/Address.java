@@ -2,6 +2,9 @@ package business.models;
 
 import java.io.Serializable;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Address implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -38,6 +41,20 @@ public class Address implements Serializable{
 	}
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+	
+	public StringProperty getStreetProperty() {
+		return new SimpleStringProperty(this.street);
+	}
+    public StringProperty getZipProperty() {
+		return new SimpleStringProperty(this.zip);
+	}
+    public StringProperty getCityProperty() {
+		return new SimpleStringProperty(this.city);
+	}
+
+	public StringProperty getStateProperty() {
+		return new SimpleStringProperty(this.state);
 	}
 	
 }

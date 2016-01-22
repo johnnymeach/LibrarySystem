@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
 	static Helper helper = new Helper();
 	Stage stage;
 
-	
+	@FXML
 	public void loginAction(ActionEvent event) {
 		usernameField.setText("984909");
 		passwordField.setText("321");
