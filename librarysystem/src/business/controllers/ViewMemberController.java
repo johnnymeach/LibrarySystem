@@ -69,8 +69,8 @@ public class ViewMemberController implements Initializable {
 		List<LibraryMember> memberList = libraryMember.getAllItems();
 		
 		colMemberId.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("memberId"));
-		colFirstname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("firstname"));
-		colLastname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("lastname"));
+		colFirstname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("firstName"));
+		colLastname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("lastName"));
 		colPhone.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("phone"));
 		colStreet.setCellValueFactory(cellData -> cellData.getValue().getAddress().getStreetProperty());
 		colCity.setCellValueFactory(cellData -> cellData.getValue().getAddress().getCityProperty());
