@@ -13,4 +13,8 @@ public class EditMemberController {
 		LoginController.helper.backToHome(stage, lblClose,"../views/librarian/ViewMember.fxml");
 	}
 	
+	public void test(){
+		System.out.println("Testing.......");
+	}
+	
 }

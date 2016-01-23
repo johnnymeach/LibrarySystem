@@ -78,4 +78,10 @@ public class ViewMemberController implements Initializable {
 		colZip.setCellValueFactory(cellData -> cellData.getValue().getAddress().getZipProperty());
 		libraryMemberTable.setItems(FXCollections.observableArrayList(memberList));
 	}
+	
+	public void openEditMemberView(){
+		String memberView = "../views/librarian/EditMember.fxml";
+		String viewTitle = "Edit Member";
+		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+	}
 }
