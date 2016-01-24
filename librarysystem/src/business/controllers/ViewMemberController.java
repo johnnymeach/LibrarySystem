@@ -1,33 +1,36 @@
 package business.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import business.models.LibraryMember;
 import business.models.getControllerWithParam;
-import business.util.Helper;
 import dataaccess.LibraryMemberImpl;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ViewMemberController implements Initializable {
 
+
+	LibraryMemberImpl libraryMember = new LibraryMemberImpl();
+	List<LibraryMember> memberList = libraryMember.getAllItems();
+	
 	@FXML
 	private Label lblClose;
 	Stage stage;
+
+	@FXML
+	private TextField txtSearchMemberId;
 
 	@FXML
 	private TableView<LibraryMember> libraryMemberTable;
@@ -71,9 +74,6 @@ public class ViewMemberController implements Initializable {
 	}
 
 	public void getAllLibraryMember() {
-		LibraryMemberImpl libraryMember = new LibraryMemberImpl();
-		List<LibraryMember> memberList = libraryMember.getAllItems();
-
 		colMemberId.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("memberId"));
 		colFirstname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("firstName"));
 		colLastname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("lastName"));
@@ -90,14 +90,40 @@ public class ViewMemberController implements Initializable {
 		String memberView = "../views/librarian/EditMember.fxml";
 		String viewTitle = "Edit Member";
 		LoginController.helper.loadNewStageWithParam(new getControllerWithParam() {
-			
+
 			@Override
 			public void getObjectController(Object controller) {
 				// TODO Auto-generated method stub
 				EditMemberController ctrl = (EditMemberController) controller;
 				ctrl.setSelectedMember(selectedMember);
 			}
-		}, stage, lblClose,memberView,viewTitle,false, selectedMember);
-			
+		}, stage, lblClose, memberView, viewTitle, false, selectedMember);
 	}
+
+	public void searchMember() {
+		LibraryMember searchMember = null;
+		String requestId = txtSearchMemberId.getText();
+		if (requestId.isEmpty()) {
+			LoginController.helper.showSuccessDialog("Please input memberID", "Empty Field");
+			libraryMemberTable.setItems(FXCollections.observableArrayList(memberList));
+		} else {
+			searchMember = libraryMember.searchLibraryMember(requestId);
+			if (searchMember == null) {
+				LoginController.helper.showSuccessDialog("Search not found", "Not found");
+				libraryMemberTable.setItems(null);
+			} else {
+				colMemberId.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("memberId"));
+				colFirstname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("firstName"));
+				colLastname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("lastName"));
+				colPhone.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("phone"));
+				colStreet.setCellValueFactory(cellData -> cellData.getValue().getAddress().getStreetProperty());
+				colCity.setCellValueFactory(cellData -> cellData.getValue().getAddress().getCityProperty());
+				colState.setCellValueFactory(cellData -> cellData.getValue().getAddress().getStateProperty());
+				colZip.setCellValueFactory(cellData -> cellData.getValue().getAddress().getZipProperty());
+				libraryMemberTable.setItems(FXCollections.observableArrayList(searchMember));
+			}
+		}
+
+	}
+
 }
