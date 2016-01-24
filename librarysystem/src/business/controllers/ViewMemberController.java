@@ -1,15 +1,21 @@
 package business.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import business.models.LibraryMember;
+import business.models.getControllerWithParam;
+import business.util.Helper;
 import dataaccess.LibraryMemberImpl;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,7 +28,7 @@ public class ViewMemberController implements Initializable {
 	@FXML
 	private Label lblClose;
 	Stage stage;
-	
+
 	@FXML
 	private TableView<LibraryMember> libraryMemberTable;
 	@FXML
@@ -61,13 +67,13 @@ public class ViewMemberController implements Initializable {
 				System.exit(0);
 			});
 		});
-		
+
 	}
-	
-	public void getAllLibraryMember(){
+
+	public void getAllLibraryMember() {
 		LibraryMemberImpl libraryMember = new LibraryMemberImpl();
 		List<LibraryMember> memberList = libraryMember.getAllItems();
-		
+
 		colMemberId.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("memberId"));
 		colFirstname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("firstName"));
 		colLastname.setCellValueFactory(new PropertyValueFactory<LibraryMember, String>("lastName"));
@@ -78,10 +84,20 @@ public class ViewMemberController implements Initializable {
 		colZip.setCellValueFactory(cellData -> cellData.getValue().getAddress().getZipProperty());
 		libraryMemberTable.setItems(FXCollections.observableArrayList(memberList));
 	}
-	
-	public void openEditMemberView(){
+
+	public void openEditMemberView() {
+		LibraryMember selectedMember = libraryMemberTable.getSelectionModel().getSelectedItem();
 		String memberView = "../views/librarian/EditMember.fxml";
 		String viewTitle = "Edit Member";
-		LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+		LoginController.helper.loadNewStageWithParam(new getControllerWithParam() {
+			
+			@Override
+			public void getObjectController(Object controller) {
+				// TODO Auto-generated method stub
+				EditMemberController ctrl = (EditMemberController) controller;
+				ctrl.setSelectedMember(selectedMember);
+			}
+		}, stage, lblClose,memberView,viewTitle,false, selectedMember);
+			
 	}
 }

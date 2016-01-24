@@ -1,6 +1,9 @@
 package business.util;
 
+import business.controllers.EditMemberController;
+import business.models.LibraryMember;
 import business.models.User;
+import business.models.getControllerWithParam;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,11 +33,33 @@ public class Helper {
 			newStage.setMaximized(maximized);
 			newStage.setTitle(viewTitle);
 			newStage.setScene(new Scene(root));
+
 			newStage.show();
 			stage.close();
 		} catch (Exception e) {
 		}
+	}
 
+	public void loadNewStageWithParam(getControllerWithParam ctl, Stage oldStage, Label lb, String viewName,
+			String viewTitle, boolean maximized, LibraryMember selectedMember) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(viewName));
+			Parent root = (Parent) loader.load();
+			if (ctl != null) {
+				ctl.getObjectController(loader.getController());
+			}
+			Scene newScene = new Scene(root);
+			Stage newStage = new Stage();
+
+			oldStage = (Stage) lb.getScene().getWindow();
+			newStage.setTitle(viewTitle);
+			newStage.setMaximized(maximized);
+			newStage.setTitle(viewTitle);
+			newStage.setScene(newScene);
+			newStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void backToHome(Stage stage, Label lblClose, String memberView) {
@@ -48,7 +73,7 @@ public class Helper {
 		alert.setContentText(msg);
 		alert.showAndWait();
 	}
-	
+
 	public void showSuccessDialog(String msg, String title) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle(title);
