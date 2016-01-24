@@ -23,20 +23,15 @@
       <Separator layoutX="7.0" layoutY="66.0" prefHeight="16.0" prefWidth="840.0" />
       <AnchorPane layoutX="31.0" layoutY="98.0" prefHeight="438.0" prefWidth="187.0">
          <children>
-            <Button layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Members" />
-            <Button layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Books" />
-            <Button layoutX="14.0" layoutY="228.0" mnemonicParsing="false" onAction="#openLibrarianInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Librarian">
+            <Button layoutX="14.0" layoutY="115.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Members" />
+            <Button layoutX="14.0" layoutY="181.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Books" />
+            <Button layoutX="14.0" layoutY="316.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Change Password" />
+            <Button layoutX="14.0" layoutY="247.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Author">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Change Password" />
-            <Button layoutX="14.0" layoutY="348.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Author">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Button>
-            <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#openAdminInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Admintrator">
+            <Button fx:id="btnCheckoutBook" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Checkout Book">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
