@@ -1,18 +1,24 @@
 package business.controllers;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
+import business.models.Address;
 import business.models.LibraryMember;
+import dataaccess.LibraryMemberImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
-public class EditMemberController implements Initializable{
+public class EditMemberController implements Initializable {
 
 	private LibraryMember selectedMember;
 	@FXML
@@ -31,7 +37,7 @@ public class EditMemberController implements Initializable{
 	private TextField txtMemberState;
 	@FXML
 	private TextField txtMemberZip;
-	
+
 	public LibraryMember getSelectedMember() {
 		return selectedMember;
 	}
@@ -43,8 +49,7 @@ public class EditMemberController implements Initializable{
 	@FXML
 	private Label lblClose;
 	Stage stage;
-	
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Platform.runLater(() -> {
@@ -52,8 +57,8 @@ public class EditMemberController implements Initializable{
 		});
 
 	}
-	
-	public void getDataToEdit(){
+
+	public void getDataToEdit() {
 		txtMemberID.setDisable(true);
 		txtMemberID.setText(selectedMember.getMemberId());
 		txtMemberFName.setText(selectedMember.getFirstName());
@@ -64,13 +69,45 @@ public class EditMemberController implements Initializable{
 		txtMemberCity.setText(selectedMember.getAddress().getCity());
 		txtMemberZip.setText(selectedMember.getAddress().getZip());
 	}
+
 	public void backToMemberView() {
-		LoginController.helper.backToHome(stage, lblClose,"../views/librarian/ViewMember.fxml");
+		LoginController.helper.backToHome(stage, lblClose, "../views/librarian/ViewMember.fxml");
 	}
-	
-	public void SaveEditedField(){
+
+	public void SaveEditedField() {
+		checkRequireField();
+		Address address = new Address(txtMemberStreet.getText(), txtMemberCity.getText(), txtMemberState.getText(),
+				txtMemberZip.getText());
+		LibraryMember currentMember = new LibraryMember();
+
+		currentMember.setMemberId(txtMemberID.getText());
+		currentMember.setFirstName(txtMemberFName.getText());
+		currentMember.setLastName(txtMemberLName.getText());
+		currentMember.setPhone(txtMemberPhone.getText());
+		currentMember.setAddress(address);
+
+		LibraryMemberImpl memberImpl = new LibraryMemberImpl();
+		memberImpl.editLibraryMember(currentMember);
+
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Update successfully");
+		alert.setContentText("Member was updated to the system");
+		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == ButtonType.OK) {
+			String memberView = "../views/librarian/ViewMember.fxml";
+			String viewTitle = "Library System";
+			LoginController.helper.loadNewStage(stage, lblClose, memberView, viewTitle, false);
+		}
 		
 	}
-	
-	
+
+	public void checkRequireField() {
+		if (txtMemberFName.getText().isEmpty() || txtMemberLName.getText().isEmpty()
+				|| txtMemberPhone.getText().isEmpty() || txtMemberStreet.getText().isEmpty()
+				|| txtMemberCity.getText().isEmpty() || txtMemberState.getText().isEmpty()
+				|| txtMemberZip.getText().isEmpty()) {
+			LoginController.helper.showErroDialog("All fields are required", "Error empty fields");
+		}
+	}
+
 }

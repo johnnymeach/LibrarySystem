@@ -50,13 +50,13 @@ public class Helper {
 			}
 			Scene newScene = new Scene(root);
 			Stage newStage = new Stage();
-
 			oldStage = (Stage) lb.getScene().getWindow();
 			newStage.setTitle(viewTitle);
 			newStage.setMaximized(maximized);
 			newStage.setTitle(viewTitle);
 			newStage.setScene(newScene);
 			newStage.show();
+			oldStage.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

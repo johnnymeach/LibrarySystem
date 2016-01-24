@@ -17,42 +17,26 @@
          <image>
             <Image url="@../img/bookss.jpg" />
          </image>
-         <effect>
-            <BoxBlur />
-         </effect>
       </ImageView>
       <Group layoutX="351.0" layoutY="66.0" />
       <Group layoutX="319.0" layoutY="225.0" />
-      <HBox layoutX="293.0" layoutY="91.0" prefHeight="38.0" prefWidth="225.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Book" />
-            <TextField promptText="search by ISBN" />
-         </children>
-      </HBox>
-      <HBox layoutX="539.0" layoutY="91.0" prefHeight="30.0" prefWidth="240.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Member" />
-            <TextField promptText="Search by member ID" />
-         </children>
-      </HBox>
       <Separator layoutX="7.0" layoutY="66.0" prefHeight="16.0" prefWidth="840.0" />
-      <AnchorPane layoutX="31.0" layoutY="98.0" prefHeight="438.0" prefWidth="173.0">
+      <AnchorPane layoutX="31.0" layoutY="98.0" prefHeight="438.0" prefWidth="187.0">
          <children>
-            <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Members" />
-            <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Books" />
-            <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#openLibrarianInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Librarian">
+            <Button layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#openMemberInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Members" />
+            <Button layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#openBookInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Books" />
+            <Button layoutX="14.0" layoutY="228.0" mnemonicParsing="false" onAction="#openLibrarianInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Librarian">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Separator layoutX="3.0" layoutY="50.0" prefHeight="1.0" prefWidth="165.0" />
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#changePassword" styleClass="btn" text="Change Password" />
-            <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Author">
+            <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Change Password" />
+            <Button layoutX="14.0" layoutY="348.0" mnemonicParsing="false" onAction="#openAuthorInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Author">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#openAdminInfo" prefHeight="27.0" prefWidth="141.0" styleClass="btn" text="Admintrator">
+            <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#openAdminInfo" prefHeight="38.0" prefWidth="163.0" styleClass="btn" text="Admintrator">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -65,5 +49,9 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Label>
+      <TextField layoutX="360.0" layoutY="96.0" prefHeight="30.0" prefWidth="163.0" promptText="Search by ISBN" />
+      <TextField layoutX="683.0" layoutY="95.0" prefHeight="30.0" prefWidth="149.0" promptText="Search by member ID" />
+      <Text layoutX="258.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="labelForInput" text="Find a book" wrappingWidth="90.0" />
+      <Text layoutX="558.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="labelForInput" text="Find a member" wrappingWidth="125.0" />
    </children>
 </AnchorPane>
