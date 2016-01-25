@@ -20,6 +20,14 @@ public class User extends Person implements Serializable {
 		return userID;
 	}
 
+	public PersonRole getRole() {
+		return role;
+	}
+
+	public void setRole(PersonRole role) {
+		this.role = role;
+	}
+
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
@@ -32,6 +40,7 @@ public class User extends Person implements Serializable {
 		this.userPassword = userPassword;
 	}
 	
+	@Override
 	public String toString() {
 		return "Checkout record for library member " + userID + ": " + userPassword + ": "+role;
 	}

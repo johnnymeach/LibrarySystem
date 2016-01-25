@@ -2,6 +2,9 @@ package business.models;
 
 import java.io.Serializable;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Author extends Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String credential;
@@ -24,6 +27,9 @@ public class Author extends Person implements Serializable {
 
 	public String getShortBio() {
 		return shortBio;
+	}
+	public StringProperty getName(){
+		return new SimpleStringProperty(this.getFirstName() + " " + this.getLastName());
 	}
 
 	public void setShortBio(String shortBio) {

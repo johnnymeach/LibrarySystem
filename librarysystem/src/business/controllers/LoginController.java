@@ -32,11 +32,10 @@ public class LoginController implements Initializable {
 
 	@FXML
 	public void loginAction(ActionEvent event) {
-		usernameField.setText("984909");
-		passwordField.setText("321");
 		
 		UserImpl userImpl = new UserImpl();
 		user = userImpl.searchUser(usernameField.getText());
+		System.out.println(user);
 		if (user != null) {
 			if (user.getUserPassword().toString().equals(passwordField.getText())) {
 				String memberView = "../views/home/Dashboard.fxml";

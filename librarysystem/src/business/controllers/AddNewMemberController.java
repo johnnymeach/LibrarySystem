@@ -1,11 +1,9 @@
 package business.controllers;
 
 import business.models.Address;
-import business.models.CheckoutRecord;
 import business.models.LibraryMember;
 import business.util.Helper;
 import dataaccess.LibraryMemberImpl;
-import dataaccess.LibraryMemberIn;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

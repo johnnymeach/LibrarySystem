@@ -1,7 +1,6 @@
 package business.models;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 public class LibraryMember extends Person implements Serializable {
 

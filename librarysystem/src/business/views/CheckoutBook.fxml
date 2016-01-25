@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1370.0" styleClass="containerBackground" stylesheets="@css/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.controllers.CheckoutController">
+   <children>
+      <Separator layoutX="17.0" layoutY="76.0" prefHeight="16.0" prefWidth="1339.0" />
+      <Text layoutX="305.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleLabel" text="Checkout Book" />
+      <Text layoutX="24.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="labelForInput" text="Find a member" wrappingWidth="125.0" />
+      <Text layoutX="717.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="labelForInput" text="Find a book" wrappingWidth="90.0" />
+      <TextField fx:id="txtSearchMemberID" layoutX="149.0" layoutY="106.0" prefHeight="30.0" prefWidth="149.0" promptText="Search by member ID" />
+      <TextField fx:id="txtSearchBookISBN" layoutX="829.0" layoutY="107.0" prefHeight="30.0" prefWidth="252.0" promptText="Search by ISBN" />
+      <Button fx:id="btnCheckoutBook" layoutX="316.0" layoutY="107.0" mnemonicParsing="false" onAction="#searchMember" prefHeight="30.0" prefWidth="97.0" styleClass="btn" text="Search">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnCheckoutBook1" layoutX="1113.0" layoutY="106.0" mnemonicParsing="false" onAction="#searchBook" prefHeight="30.0" prefWidth="167.0" styleClass="btn" text="Search">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnCheckoutBook2" layoutX="179.0" layoutY="548.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="211.0" styleClass="btn" text="Checkout">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnBack" layoutX="894.0" layoutY="533.0" mnemonicParsing="false" onAction="#backToDashboard" prefHeight="30.0" prefWidth="211.0" styleClass="btn" text="Back To Dashboard">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <TableView fx:id="tableCheckoutBook" layoutX="25.0" layoutY="239.0" prefHeight="261.0" prefWidth="663.0">
+        <columns>
+          <TableColumn fx:id="colISBN" prefWidth="130.0" text="ISBN" />
+          <TableColumn fx:id="colTitleBook" prefWidth="131.0" text="Book Title" />
+            <TableColumn fx:id="colCheckoutDate" prefWidth="138.0" text="Checkout Date" />
+            <TableColumn fx:id="colDueDate" prefWidth="148.0" text="Due Date" />
+            <TableColumn fx:id="colCopyNo" prefWidth="115.0" text="Copy Number" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableListOfCopy" layoutX="714.0" layoutY="239.0" onMouseClicked="#selectCheckoutBook" prefHeight="261.0" prefWidth="629.0">
+         <columns>
+            <TableColumn fx:id="colCopyNumber" prefWidth="127.0" text="Copy Number" />
+            <TableColumn fx:id="colBookCopyTitle" minWidth="8.0" prefWidth="247.0" text="Book Title" />
+            <TableColumn fx:id="colMaxCheckoutLength" prefWidth="154.0" text="Max Checkout Length" />
+            <TableColumn fx:id="colAvailable" prefWidth="99.0" text="Available" />
+         </columns>
+      </TableView>
+      <Text layoutX="720.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book title: " wrappingWidth="69.0" />
+      <Text layoutX="722.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Copies: " wrappingWidth="116.0" />
+      <Text fx:id="txtNumberCopy" layoutX="847.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0" />
+      <Text fx:id="txtBookTitle" layoutX="818.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="590.0" />
+      <Text fx:id="txtMemberName" layoutX="148.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
+      <Text layoutX="33.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name: " wrappingWidth="97.0" />
+      <Label fx:id="lblClose" layoutX="10.0" layoutY="7.0" text="X" textFill="#f20303">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

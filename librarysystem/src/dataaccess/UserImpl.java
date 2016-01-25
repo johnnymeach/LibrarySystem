@@ -33,6 +33,7 @@ public class UserImpl extends DataAccess implements UserIn {
 
 	}
 
+	@Override
 	public void addUser(User user) {
 		List<User> allUser = getAllItems();
 		allUser.add(user);
